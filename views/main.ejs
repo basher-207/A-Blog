@@ -1,0 +1,19 @@
+<%- include("header") %>
+
+<% for(let i = 0; i < arr.length; i++){ %>
+<form action="/" method="post" class="chapter">
+    <input name="currentTitle" type="hidden" value="<%= arr[i].title %>">
+    <input name="currentContent" type="hidden" value="<%= arr[i].content %>">
+
+    <button class="title-b" type="submit"><h3 class="title"><%= arr[i].title %></h3></button>
+
+    <% if(arr[i].content.length > 250){ %>
+        <p class="content"><%= arr[i].content.slice(0, 250) %>...</p>
+    <% }else{ %>
+        <p class="content"><%= arr[i].content %></p>
+    <% } %>
+
+    </form>
+<% }; %>   
+
+<%- include("footer") %>
