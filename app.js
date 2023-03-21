@@ -23,11 +23,39 @@ app.get("/", (req, res)=>{
     res.render("main", {arr:  chaptersArr});
 });
 
-app.post("/", (req, res)=>{
-    const currTitle = req.body.currentTitle;
-    const currContent = req.body.currentContent;
-    res.render("chapter", {title: currTitle, content: currContent});
+//CHAPTER PAGE
+app.get("/posts/:arrElementNumber/:title", (req, res)=>{
+    const index = req.params.arrElementNumber;
+    res.render("chapter", {title: chaptersArr[index].title, content: chaptersArr[index].content, index: index});
 });
+
+app.post("/posts/settings/:editOrDelete", (req, res)=>{
+
+    switch (req.params.editOrDelete) {
+        case "Edit":
+            res.render("edit", {title: chaptersArr[req.body.index].title, content: chaptersArr[req.body.index].content, index: req.body.index});
+            break;
+        case "Delete":
+            chaptersArr.splice(req.body.index, 1);
+            res.redirect("/");
+            break;
+    
+        default:
+            console.log("Path is incorrect. Current rout: " + req.params.editOrDelete);
+            break;
+    }
+});
+
+app.post("/editing", (req, res)=>{
+    const Index = req.body.currentIndex;
+    const NewTitle = req.body.titleInput;
+    const NewContent = req.body.contentInput;
+
+    chaptersArr[Index].title = NewTitle;
+    chaptersArr[Index].content = NewContent;
+    res.redirect("/");
+});
+
 
 // COMPOSE PAGE
 app.get("/compose", (req, res)=>{

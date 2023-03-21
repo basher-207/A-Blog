@@ -1,10 +1,9 @@
 <%- include("header") %>
 
 <% for(let i = 0; i < arr.length; i++){ %>
-<form action="/" method="post" class="chapter">
-    <input name="currentTitle" type="hidden" value="<%= arr[i].title %>">
-    <input name="currentContent" type="hidden" value="<%= arr[i].content %>">
-
+<% const index = i; %>
+<form action="/posts/<%= i %>/<%= arr[i].title %>" method="get" class="chapter">
+    
     <button class="title-b" type="submit"><h3 class="title"><%= arr[i].title %></h3></button>
 
     <% if(arr[i].content.length > 250){ %>

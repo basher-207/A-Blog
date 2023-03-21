@@ -3,6 +3,18 @@
     <div class="chapter">
         <h3 class="title"><%= title %></h3>
         <p class="content"><%= content %></p>
+        <div class="chapter-buttons-box">
+            <form action="/posts/settings/Edit" method="post">
+                <input type="hidden" name="index" value="<%= index %>">
+                <button class="button-compose"><h3 class="button-compose-h3">Edit</h3></button>
+            </form>
+                
+            <form action="/posts/settings/Delete" method="post">
+                <input type="hidden" name="index" value="<%= index %>"> 
+                <button class="button-compose"><h3 class="button-compose-h3 del">Delete</h3></button>
+            </form>
+        </div>
     </div>
+    
 
 <%- include("footer") %>

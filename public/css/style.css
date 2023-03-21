@@ -67,6 +67,20 @@ header{
     margin: 0;
 }
 
+.chapter-buttons-box{
+    display: flex;
+    margin-top: 2rem;
+}
+
+.chapter-buttons-box .button-compose{
+    margin-right: 2rem;
+}
+
+.chapter-buttons-box .button-compose .del{
+    color: red;
+}
+
+
 /* COMPOSE PAGE */
 .compose-form{
     display: flex;
