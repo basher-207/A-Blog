@@ -123,8 +123,48 @@ header{
     opacity: 0.6;
 }
 
-/* FOOTER */
+/* ABOUT */
+.about-box{
+    margin: 6rem 8rem 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+}
 
+.logo{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: rgb(208, 208, 208);
+}
+
+.logo img{
+    opacity: 0.6;
+    transform: translate(0, 47%);
+    width: 50px;
+    height: 50px;
+}
+
+.linkedin-logo{
+    opacity: 0.6;
+    transform: translate(0, -20%);
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.about-box a:hover{
+    transition: 0.2s;
+    opacity: 0.4;
+}
+
+.about-p{
+    text-align: center;
+    margin: auto 8rem 4rem;
+}
+
+/* FOOTER */
 footer{
     position: fixed;
     bottom: 0px;

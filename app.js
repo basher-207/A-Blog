@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const popup = require('node-popup');
 
 
 const app = express();
